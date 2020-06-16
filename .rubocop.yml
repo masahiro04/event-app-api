@@ -1,0 +1,206 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  Exclude:
+    - "node_modules/**/*"
+    - "db/**/*"
+    - "bin/**/*"
+    - "Guardfile"
+    - "config/deploy.rb"
+    - "config/deploy/**/*"
+    - "config/unicorn/*"
+    - "config/initializers/**/*"
+    - "config/routes.rb"
+  DisplayCopNames: true
+  TargetRubyVersion: 2.5
+
+Rails:
+  Enabled: true
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/LineLength:
+  Max: 140
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  Exclude:
+    - "spec/**/*"
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 50
+
+Metrics/BlockLength:
+  CountComments: false
+  Max: 50
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - 'config/initializers/*.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/GuardClause:
+  MinBodyLength: 3
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    "%":  "!!"
+    "%i": "[]"
+    "%q": "!!"
+    "%Q": "!!"
+    "%r": "!!"
+    "%s": "!!"
+    "%w": "[]"
+    "%W": "[]"
+    "%x": "()"
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Metrics/ClassLength:
+  Enabled: false
+
+# 誤爆がひどいので無効に
+Lint/RedundantSplatExpansion:
+  Enabled: false
+
+Lint/AmbiguousOperator:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: true
+
+Style/WordArray:
+  MinSize: 4
+
+Style/SymbolArray:
+  MinSize: 4
+
+Metrics/PerceivedComplexity:
+  Max: 11
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/Semicolon:
+  Exclude:
+    - "spec/**/*"
+
+Style/FormatString:
+  EnforcedStyle: format
+
+Style/NumericLiterals:
+  MinDigits: 7
+
+Naming/PredicateName:
+  ForbiddenPrefixes:
+    - "is_"
+    - "have_"
+  NamePrefix:
+    - "is_"
+    - "have_"
+
+Layout/FirstHashElementIndentation:
+  Enabled: false
+
+Layout/LeadingCommentSpace:
+  Enabled: true
+
+Style/LineEndConcatenation:
+  Enabled: true
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/MultilineTernaryOperator:
+  Enabled: true
+
+Style/NegatedIf:
+  Enabled: true
+
+Style/Not:
+  Enabled: true
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Lint/UnderscorePrefixedVariableName:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
+Style/EmptyCaseCondition:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Rails/DynamicFindBy:
+  Exclude:
+    - 'spec/system/**/*.rb'
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Style/NumericPredicate:
+  Enabled: false
+
+Layout/DotPosition:
+  Enabled: false
+
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+Metrics/BlockNesting:
+  Max: 4
+
+Style/FormatStringToken:
+  Enabled: false
