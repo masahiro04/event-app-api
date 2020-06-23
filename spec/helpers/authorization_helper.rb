@@ -9,7 +9,6 @@ module AuthorizationHelper
              password: '11111111',
              password_confirmation: '11111111' },
          as: :json
-    puts response.status
   end
 
   def auth_tokens_for_user(user)
@@ -18,5 +17,11 @@ module AuthorizationHelper
          params: { email: user['email'], password: '11111111' },
          as: :json
     response.headers.slice('client', 'access-token', 'uid')
+  end
+
+  def user_info(tokens)
+    # Authのリンクが変わる場合は修正が必要
+    get "/api/auth/validate_token?access-token=#{ tokens['access-token'] }&client=#{ tokens['client'] }&uid=#{ tokens['uid'] }", as: :json
+    response.parsed_body['data']
   end
 end

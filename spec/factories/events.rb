@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :event do
-    title "MyString"
-    body "dadad"
+    title 'taitoru'
+    body 'dadadadadada'
     user
   end
 end

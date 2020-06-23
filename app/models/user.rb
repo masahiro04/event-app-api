@@ -13,8 +13,8 @@ class User < ActiveRecord::Base
 
   jp_prefecture :prefecture_code, method_name: :prefecture
 
-  # validates :name, presence: true
-  # validates :email, presence: true
+  validates :name, presence: true
+  validates :email, presence: true
 
   has_many :events
 end

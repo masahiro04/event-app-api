@@ -7,8 +7,7 @@ module Api
 
     def index
       begin
-        @events = Event.all
-        response_success(@events)
+        response_success(Event.all.map{ |event| event.to_dict })
       end
     rescue StandardError => e
       logger.error e.message
@@ -17,7 +16,7 @@ module Api
 
     def show
       begin
-        response_success(@event)
+        response_success(@event.to_dict)
       end
     rescue StandardError => e
       logger.error e.message
@@ -28,9 +27,9 @@ module Api
       begin
         @event = current_api_user.events.build(event_params)
         if @event.save
-          response_success(@event)
+          response_success(@event.to_dict)
         else
-          response_unprocessable_entity(@event)
+          response_unprocessable_entity(@event.to_dict)
         end
       end
     rescue StandardError => e
@@ -42,7 +41,7 @@ module Api
       begin
         return response_unauthorized unless canAccess?(@event)
         if @event.update(event_params)
-          response_success(@event)
+          response_success(@event.to_dict)
         else
           response_unprocessable_entity(@event)
         end
