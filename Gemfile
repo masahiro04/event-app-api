@@ -14,7 +14,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.6.0'
   gem 'factory_bot_rails', '~> 4.10.0'
-
+  gem 'ffaker'
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'brakeman', '~> 4.7', require: false
@@ -43,6 +43,8 @@ end
 gem 'devise'
 gem 'devise_token_auth'
 gem 'rack-cors'
+gem 'jp_prefecture'
+gem 'enumerize'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

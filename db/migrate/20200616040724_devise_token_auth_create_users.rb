@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.0]
   def change
     
@@ -31,8 +33,6 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[6.0]
       ## User Info
       t.string :name
       t.string :email
-      t.string :favorite_phrase
-      t.string :gender
       t.integer :prefecture_code
 
       ## Tokens
