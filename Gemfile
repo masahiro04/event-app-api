@@ -45,6 +45,9 @@ gem 'devise_token_auth'
 gem 'rack-cors'
 gem 'jp_prefecture'
 gem 'enumerize'
+gem 'rmagick'
+gem 'carrierwave'
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

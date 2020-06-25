@@ -6,6 +6,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :body
       t.string :address
+      t.string :image
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
