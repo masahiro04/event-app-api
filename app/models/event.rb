@@ -16,7 +16,7 @@ class Event < ApplicationRecord
       address: address,
       created_at: created_at,
       updated_at: updated_at,
-      image: image,
+      image: image&.url,
       user: {
           id: user.id,
           name: user.name
